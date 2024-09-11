@@ -14,15 +14,9 @@ public class DemoController {
 
     // define a constructor for dependency injection
     @Autowired
-    public DemoController(Coach theCoach) {
+    public DemoController(@Qualifier("cricketCoach") Coach theCoach) {
         myCoach = theCoach;
     }
-
-    // define a setter for dependency injection
-//    @Autowired
-//    public void setMyCoach(Coach theCoach) {
-//        myCoach = theCoach;
-//    }
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
